@@ -20,4 +20,4 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '3.8.1'
 }
 
-mainClassName = 'com.example1.App'
+mainClassName = 'com.example.App'
