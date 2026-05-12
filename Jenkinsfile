@@ -2,8 +2,13 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK'
         gradle 'Gradle'
+        jdk 'JDK'
+    }
+
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
@@ -15,6 +20,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh 'echo $JAVA_HOME'
                 sh 'java -version'
                 sh 'gradle clean build'
             }
